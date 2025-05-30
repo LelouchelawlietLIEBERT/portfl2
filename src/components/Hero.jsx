@@ -1,9 +1,23 @@
 import { motion } from "framer-motion";
-
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
+import React from "react";
+import Typed from "typed.js";
 
 const Hero = () => {
+  const el = React.useRef(null);
+  React.useEffect(() => {
+    const typed = new Typed(el.current, {
+      strings: ["AI", "WEB-DEV","MACHINE LEARNING"],
+      typeSpeed: 100,
+      loop:true,
+      backDelay: 2000,
+    });
+    return () => {
+      typed.destroy();
+    };
+  }, []);
+
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <div
@@ -16,11 +30,11 @@ const Hero = () => {
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className="text-[#915EFF]">Ashwin</span>
+            Hi, I'm <span className="wtf-text">Ashwin</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I develop cool user <br className="sm:block hidden" />
-            interfaces and web applications
+            I am a student, & <br className="sm:block hidden" />I love doing{" "}
+            <span ref={el}></span>
           </p>
         </div>
       </div>
