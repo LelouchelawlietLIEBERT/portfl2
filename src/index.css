@@ -202,3 +202,33 @@
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
   }
 }
+
+.wtf-text {
+        text-transform: uppercase;
+        text-align: center;
+        margin: 25px 0;
+        font-weight: bold;
+        background: linear-gradient(
+          to right,
+          #4acfee,
+          #53f8c9,
+          #02d79a,
+          #6070fd,
+          #2a46ff,
+          #0099ff,
+          #4acfee
+        );
+        background-size: 200%;
+        background-position: 0% 50%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        animation: grad 2.5s linear infinite;
+      }
+
+      @keyframes grad {
+        to {
+          background-position: 200% 50%;
+        }
+      }
